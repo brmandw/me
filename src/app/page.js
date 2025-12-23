@@ -572,9 +572,9 @@ function App() {
                     </div>
                     <div className="space-y-6">
                       <div>
-                        <h3 className="text-lg font-medium mb-3">Frontend</h3>
+                        <h3 className="text-lg font-medium mb-3">Languages & Frameworks</h3>
                         <div className="flex flex-wrap gap-2">
-                          {['React', 'TypeScript', 'Tailwind CSS', 'Vue.js', 'JavaScript'].map((skill) => (
+                          {['JavaScript','PHP', 'Next.js', 'React', 'Express.js', 'Laravel'].map((skill) => (
                             <span
                               key={skill}
                               className="border border-gray-300 px-3 py-1 text-sm rounded-full bg-gray-50"
@@ -585,9 +585,22 @@ function App() {
                         </div>
                       </div>
                       <div>
-                        <h3 className="text-lg font-medium mb-3">Backend</h3>
+                        <h3 className="text-lg font-medium mb-3">Backend Technologies</h3>
                         <div className="flex flex-wrap gap-2">
-                          {['Node.js', 'PostgreSQL', 'Firebase', 'REST API', 'GraphQL'].map((skill) => (
+                          {['Node.js', 'Express.js', 'MongoDB'].map((skill) => (
+                            <span
+                              key={skill}
+                              className="border border-gray-300 px-3 py-1 text-sm rounded-full bg-gray-50"
+                            >
+                              {skill}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-medium mb-3">AI & Automation</h3>
+                        <div className="flex flex-wrap gap-2">
+                          {['Google Gemini API', 'Chain-of-Thought Prompting', 'Role-based Prompting', 'n8n Automation'].map((skill) => (
                             <span
                               key={skill}
                               className="border border-gray-300 px-3 py-1 text-sm rounded-full bg-gray-50"
@@ -600,7 +613,7 @@ function App() {
                       <div>
                         <h3 className="text-lg font-medium mb-3">Tools & Others</h3>
                         <div className="flex flex-wrap gap-2">
-                          {['Git', 'Docker', 'Figma', 'AWS', 'Agile'].map((skill) => (
+                          {['Git', 'GitHub', 'Postman', 'Netlify', 'Vercel'].map((skill) => (
                             <span
                               key={skill}
                               className="border border-gray-300 px-3 py-1 text-sm rounded-full bg-gray-50"
