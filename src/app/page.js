@@ -512,16 +512,16 @@ function App() {
                     <div className="space-y-8">
                       <div className="border-l-2 border-black pl-6">
                         <h3 className="text-lg md:text-xl font-medium mb-2">
-                          Student
+                          Bootcamp Perempuan Inovasi 
                         </h3>
-                        <p className="text-gray-600 mb-2">Bootcamp Perempuan Inovasi</p>
+                        <p className="text-gray-600 mb-2">Track Fullstack Web Dev</p>
                         <p className="text-gray-500">2025</p>
                       </div>
                       <div className="border-l-2 border-gray-300 pl-6">
                         <h3 className="text-lg md:text-xl font-medium mb-2">
-                          Student
+                          Bootcamp SMKDev Scholarship Expert Class
                         </h3>
-                        <p className="text-gray-600 mb-2">Bootcamp SMKDev Scholarship Expert Class</p>
+                        <p className="text-gray-600 mb-2">Student</p>
                         <p className="text-gray-500">2025</p>
                       </div>
                       <div className="border-l-2 border-gray-300 pl-6">
