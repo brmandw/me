@@ -512,17 +512,24 @@ function App() {
                     <div className="space-y-8">
                       <div className="border-l-2 border-black pl-6">
                         <h3 className="text-lg md:text-xl font-medium mb-2">
-                          Sarjana Komputer
+                          Student
                         </h3>
-                        <p className="text-gray-600 mb-2">Universitas Indonesia</p>
-                        <p className="text-gray-500">2019 - 2023</p>
+                        <p className="text-gray-600 mb-2">Bootcamp Perempuan Inovasi</p>
+                        <p className="text-gray-500">2025</p>
                       </div>
                       <div className="border-l-2 border-gray-300 pl-6">
                         <h3 className="text-lg md:text-xl font-medium mb-2">
-                          SMA Negeri 1
+                          Student
                         </h3>
-                        <p className="text-gray-600 mb-2">Jurusan IPA</p>
-                        <p className="text-gray-500">2016 - 2019</p>
+                        <p className="text-gray-600 mb-2">Bootcamp SMKDev Scholarship Expert Class</p>
+                        <p className="text-gray-500">2025</p>
+                      </div>
+                      <div className="border-l-2 border-gray-300 pl-6">
+                        <h3 className="text-lg md:text-xl font-medium mb-2">
+                          SMK Negeri 1 Gunungputri
+                        </h3>
+                        <p className="text-gray-600 mb-2">Software Engineering</p>
+                        <p className="text-gray-500">2022 - 2025</p>
                       </div>
                     </div>
                   </div>
