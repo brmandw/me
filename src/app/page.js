@@ -637,24 +637,24 @@ function App() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
               {[
                 {
-                  title: 'E-Commerce Platform',
-                  description: 'Full-stack marketplace with payment integration',
-                  tech: 'React, Node.js, PostgreSQL',
+                  title: 'ManagHer',
+                  description: 'SaaS web app that help generate and manage business ideas',
+                  tech: 'Next.js, React, Express.js, Node.js, MongoDB, Google AI SDK, Tailwind CSS, TweakCN, Zod, React Hook Form, JWT',
                 },
                 {
-                  title: 'Portfolio Generator',
-                  description: 'Tool for creating professional portfolios',
-                  tech: 'React, TypeScript, Tailwind',
+                  title: 'OwlShop',
+                  description: 'Cart app',
+                  tech: 'Next.js, React, Tailwind CSS',
                 },
                 {
-                  title: 'Task Management App',
-                  description: 'Collaborative project management tool',
-                  tech: 'Vue.js, Firebase, Vuex',
+                  title: 'SMK Negeri 1 ChatBot',
+                  description: 'Telegram chatbot that helps students with their questions',
+                  tech: 'n8n, Google Gemini API, Chain-of-Thought Prompting',
                 },
                 {
-                  title: 'Weather Dashboard',
-                  description: 'Real-time weather data visualization',
-                  tech: 'React, API Integration, Charts',
+                  title: 'Library',
+                  description: 'Library management system',
+                  tech: 'Laravel, XAMPP, MySQL',
                 },
               ].map((project, index) => (
                 <div
@@ -672,7 +672,7 @@ function App() {
           </div>
         </section>
 
-        <section id="gallery" className="min-h-screen flex items-center px-4 md:px-20 py-16 bg-gray-50">
+        {/* <section id="gallery" className="min-h-screen flex items-center px-4 md:px-20 py-16 bg-gray-50">
           <div className="w-full max-w-6xl">
             <h2 className="text-4xl md:text-5xl font-light mb-12 md:mb-16 tracking-tight">Gallery</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
@@ -757,7 +757,7 @@ function App() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         <section id="contact" className="min-h-screen flex items-center px-4 md:px-20 py-16 bg-gray-50">
           <div className="flex flex-col items-center justify-center w-full max-w-5xl">
