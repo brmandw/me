@@ -549,27 +549,11 @@ function App() {
                     <div className="space-y-8">
                       <div className="border-l-2 border-black pl-6">
                         <h3 className="text-lg md:text-xl font-medium mb-2">
-                          Senior Web Developer
+                          Junior Web Developer
                         </h3>
-                        <p className="text-gray-600 mb-2">Tech Solutions Inc.</p>
-                        <p className="text-gray-500 mb-3">2023 - Present</p>
-                        <p className="text-gray-700 text-sm">Led development of scalable web applications using React and Node.js</p>
-                      </div>
-                      <div className="border-l-2 border-gray-300 pl-6">
-                        <h3 className="text-lg md:text-xl font-medium mb-2">
-                          Full Stack Developer
-                        </h3>
-                        <p className="text-gray-600 mb-2">Digital Agency Pro</p>
-                        <p className="text-gray-500 mb-3">2021 - 2023</p>
-                        <p className="text-gray-700 text-sm">Developed and maintained multiple client websites and web applications</p>
-                      </div>
-                      <div className="border-l-2 border-gray-300 pl-6">
-                        <h3 className="text-lg md:text-xl font-medium mb-2">
-                          Junior Developer
-                        </h3>
-                        <p className="text-gray-600 mb-2">Startup Ventures</p>
-                        <p className="text-gray-500 mb-3">2020 - 2021</p>
-                        <p className="text-gray-700 text-sm">Contributed to frontend development and bug fixes</p>
+                        <p className="text-gray-600 mb-2">B One Corp.</p>
+                        <p className="text-gray-500 mb-3">2024</p>
+                        <p className="text-gray-700 text-sm">•	Developed a clinic sales system using Laravel and XAMPP to support daily medicine transactions.</p>
                       </div>
                     </div>
                   </div>
