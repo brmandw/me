@@ -553,7 +553,7 @@ function App() {
                         </h3>
                         <p className="text-gray-600 mb-2">B One Corp.</p>
                         <p className="text-gray-500 mb-3">2024</p>
-                        <p className="text-gray-700 text-sm">•	Developed a clinic sales system using Laravel and XAMPP to support daily medicine transactions.</p>
+                        <p className="text-gray-700 text-sm">Developed a clinic sales system using Laravel and XAMPP to support daily medicine transactions.</p>
                       </div>
                     </div>
                   </div>
