@@ -368,13 +368,13 @@ function App() {
             <Briefcase size={20} />
             projects
           </button>
-          <button
+          {/* <button
             onClick={() => scrollToSection('gallery')}
             className="flex items-center gap-4 text-xl hover:underline transition-all"
           >
             <ImageIcon size={20} />
             gallery
-          </button>
+          </button> */}
           {/* <button
             onClick={() => scrollToSection('blog')}
             className="flex items-center gap-4 text-xl hover:underline transition-all"
