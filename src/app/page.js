@@ -1,15 +1,21 @@
 'use client'
 
 import { useState } from 'react';
-import { User, Briefcase, BookOpen, Mail, X, ImageIcon, Menu, Linkedin, Github, Download } from 'lucide-react';
+import { User, Briefcase, BookOpen, Mail, X, ImageIcon, Menu, Linkedin, Github, Download, ExternalLink } from 'lucide-react';
+import { AnimatePresence, motion } from 'framer-motion';
 
 function App() {
   const [activeSection, setActiveSection] = useState(null);
   const [detailOpen, setDetailOpen] = useState(false);
+  const [projectDetailOpen, setProjectDetailOpen] = useState(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const toggleDetail = (detail) => {
     setDetailOpen(detailOpen === detail ? null : detail);
+  };
+
+  const toggleProjectDetail = (index) => {
+    setProjectDetailOpen(projectDetailOpen === index ? null : index);
   };
 
   const scrollToSection = (sectionId) => {
@@ -311,40 +317,213 @@ function App() {
         <section id="projects" className="min-h-screen flex items-center px-4 md:px-12 py-10 bg-gray-50">
           <div className="w-full max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-light mb-8 md:mb-10 tracking-tight">Projects</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-4">
-              {[
-                {
-                  title: 'ManagHer',
-                  description: 'SaaS web app that help generate and manage business ideas',
-                  tech: 'Next.js, React, Express.js, Node.js, MongoDB, Google AI SDK, Tailwind CSS, TweakCN, Zod, React Hook Form, JWT',
-                },
-                {
-                  title: 'OwlShop',
-                  description: 'Cart app',
-                  tech: 'Next.js, React, Tailwind CSS',
-                },
-                {
-                  title: 'SMK Negeri 1 ChatBot',
-                  description: 'Telegram chatbot that helps students with their questions',
-                  tech: 'n8n, Google Gemini API, Chain-of-Thought Prompting',
-                },
-                {
-                  title: 'Library',
-                  description: 'Library management system',
-                  tech: 'Laravel, XAMPP, MySQL',
-                },
-              ].map((project, index) => (
-                <div
-                  key={index}
-                  className="border border-black p-4 md:p-5 hover:bg-white transition-all duration-300 group cursor-pointer"
-                >
-                  <h3 className="text-base md:text-lg font-light mb-3 group-hover:underline">
-                    {project.title}
-                  </h3>
-                  <p className="text-xs md:text-sm text-gray-600 mb-4">{project.description}</p>
-                  <p className="text-xs md:text-xs text-gray-500">{project.tech}</p>
-                </div>
-              ))}
+            
+            <div className="flex flex-col md:flex-row gap-6 md:gap-4">
+              {/* Project Grid / List */}
+              <div className={`grid grid-cols-1 ${projectDetailOpen !== null ? 'md:grid-cols-1 md:w-1/2 md:h-full' : 'md:grid-cols-2 md:w-full'} gap-6 md:gap-4 transition-all duration-500`}>
+                {[
+                  {
+                    title: 'ManagHer',
+                    image: '/globe.svg',
+                    description: 'SaaS web app that help..',
+                    tech: 'Next.js, React, Express.js, Node.js, MongoDB, Google AI..',
+                    link: '#',
+                    longDescription: 'ManagHer is a comprehensive SaaS platform designed to empower women entrepreneurs. It leverages AI to generate business ideas based on user interests and market trends. The platform also includes tools for business planning, task management, and resource allocation.'
+                  },
+                  {
+                    title: 'OwlShop',
+                    description: 'Cart app',
+                    tech: 'Next.js, React, Tailwind CSS',
+                    link: '#',
+                    longDescription: 'OwlShop is a modern e-commerce cart application built with performance and user experience in mind. It features a clean UI, seamless checkout process, and real-time inventory updates.'
+                  },
+                  {
+                    title: 'SMK Negeri 1 ChatBot',
+                    description: 'Telegram chatbot that helps students with their questions',
+                    tech: 'n8n, Google Gemini API, Chain-of-Thought Prompting',
+                    link: '#',
+                    longDescription: 'An intelligent chatbot designed for SMK Negeri 1 Gunungputri students. Powered by Google Gemini API and n8n, it can answer questions about school schedules, curriculum, and administrative procedures with high accuracy.'
+                  },
+                  {
+                    title: 'Library',
+                    description: 'Library management system',
+                    tech: 'Laravel, XAMPP, MySQL',
+                    link: '#',
+                    longDescription: 'A robust library management system built with Laravel. It handles book inventory, member management, borrowing/returning processes, and generates detailed reports for library administrators.'
+                  },
+                ].map((project, index) => (
+                  <div key={index} className="flex flex-col">
+                    <div
+                      onClick={() => toggleProjectDetail(index)}
+                      className={`
+                        border border-black p-4 md:p-5 transition-all duration-300 group cursor-pointer
+                        ${projectDetailOpen === index ? 'bg-black text-white hover:bg-white hover:text-black' : ''}
+                      `}
+                    >
+                      <h3 className={`text-base md:text-lg font-light mb-3 ${projectDetailOpen === index ? '' : 'group-hover:underline'}`}>
+                        {project.title}
+                      </h3>
+                      <p className={`text-xs md:text-sm mb-4 ${projectDetailOpen === index ? '' : ''}`}>{project.description}</p>
+                      <p className={`text-xs md:text-xs ${projectDetailOpen === index ? 'text-gray-400' : 'text-gray-500'}`}>{project.tech}</p>
+                    </div>
+
+                    {/* Mobile Detail View (Expandable) */}
+                    <AnimatePresence>
+                      {projectDetailOpen === index && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.3 }}
+                          className="md:hidden border-l border-r border-b border-black overflow-hidden"
+                        >
+                          <div className="p-6 bg-gray-50">
+                             <img src={project.image} alt={project.title} className="w-12 h-12 mb-4" />
+                             <h4 className="text-lg font-medium mb-3">{project.title}</h4>
+                             <p className="text-sm text-gray-700 mb-4 leading-relaxed">
+                               {project.longDescription}
+                             </p>
+                             <div className="mb-4">
+                               <h5 className="text-xs font-bold uppercase tracking-wider text-gray-500 mb-2">Technologies</h5>
+                               <p className="text-sm text-gray-600">{project.tech}</p>
+                             </div>
+                             <a href={project.link} className="inline-flex items-center gap-2 text-sm font-medium hover:underline">
+                               View Project <ExternalLink size={14} />
+                             </a>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                ))}
+              </div>
+
+              {/* Desktop Detail View (Sidebar) */}
+              <AnimatePresence>
+                {projectDetailOpen !== null && (
+                  <motion.div
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: 20 }}
+                    transition={{ duration: 0.3 }}
+                    className="hidden md:block md:w-1/2 border border-black p-8 h-fit sticky top-24"
+                  >
+                    <div className="flex justify-between items-start mb-6">
+                      <h3 className="text-2xl font-light">
+                        {[
+                          {
+                            title: 'ManagHer',
+                            image: '/globe.svg',
+                            description: 'SaaS web app that help generate and manage business ideas',
+                            tech: 'Next.js, React, Express.js, Node.js, MongoDB, Google AI SDK, Tailwind CSS, TweakCN, Zod, React Hook Form, JWT',
+                            link: '#',
+                            longDescription: 'ManagHer is a comprehensive SaaS platform designed to empower women entrepreneurs. It leverages AI to generate business ideas based on user interests and market trends. The platform also includes tools for business planning, task management, and resource allocation.'
+                          },
+                          {
+                            title: 'OwlShop',
+                            description: 'Cart app',
+                            tech: 'Next.js, React, Tailwind CSS',
+                            link: '#',
+                            longDescription: 'OwlShop is a modern e-commerce cart application built with performance and user experience in mind. It features a clean UI, seamless checkout process, and real-time inventory updates.'
+                          },
+                          {
+                            title: 'SMK Negeri 1 ChatBot',
+                            description: 'Telegram chatbot that helps students with their questions',
+                            tech: 'n8n, Google Gemini API, Chain-of-Thought Prompting',
+                            link: '#',
+                            longDescription: 'An intelligent chatbot designed for SMK Negeri 1 Gunungputri students. Powered by Google Gemini API and n8n, it can answer questions about school schedules, curriculum, and administrative procedures with high accuracy.'
+                          },
+                          {
+                            title: 'Library',
+                            description: 'Library management system',
+                            tech: 'Laravel, XAMPP, MySQL',
+                            link: '#',
+                            longDescription: 'A robust library management system built with Laravel. It handles book inventory, member management, borrowing/returning processes, and generates detailed reports for library administrators.'
+                          },
+                        ][projectDetailOpen].title}
+                      </h3>
+                      <button onClick={() => setProjectDetailOpen(null)} className="hover:bg-gray-100 p-2 rounded-full transition-all">
+                        <X size={20} />
+                      </button>
+                    </div>
+                    <img src={[
+                          {
+                            image: '/globe.svg',
+                          },
+                          {
+                            image: '/cart.svg',
+                          },
+                          {
+                            image: '/chat.svg',
+                          },
+                          {
+                            image: '/library.svg',
+                          },
+                        ][projectDetailOpen].image} alt={[
+                          {
+                            title: 'ManagHer',
+                          },
+                          {
+                            title: 'OwlShop',
+                          },
+                          {
+                            title: 'SMK Negeri 1 ChatBot',
+                          },
+                          {
+                            title: 'Library',
+                          },
+                        ][projectDetailOpen].title} className="w-100 h-40 mb-4" />
+                    <p className="text-base text-gray-700 mb-8 leading-relaxed">
+                       {[
+                          {
+                            longDescription: 'ManagHer is a comprehensive SaaS platform designed to empower women entrepreneurs. It leverages AI to generate business ideas based on user interests and market trends. The platform also includes tools for business planning, task management, and resource allocation.'
+                          },
+                          {
+                            longDescription: 'OwlShop is a modern e-commerce cart application built with performance and user experience in mind. It features a clean UI, seamless checkout process, and real-time inventory updates.'
+                          },
+                          {
+                            longDescription: 'An intelligent chatbot designed for SMK Negeri 1 Gunungputri students. Powered by Google Gemini API and n8n, it can answer questions about school schedules, curriculum, and administrative procedures with high accuracy.'
+                          },
+                          {
+                            longDescription: 'A robust library management system built with Laravel. It handles book inventory, member management, borrowing/returning processes, and generates detailed reports for library administrators.'
+                          },
+                        ][projectDetailOpen].longDescription}
+                    </p>
+
+                    <div className="space-y-6">
+                      <div>
+                        <h4 className="text-xs font-bold uppercase tracking-wider text-gray-500 mb-3">Technologies</h4>
+                        <div className="flex flex-wrap gap-2">
+                          {[
+                            { tech: 'Next.js, React, Express.js, Node.js, MongoDB, Google AI SDK, Tailwind CSS, TweakCN, Zod, React Hook Form, JWT' },
+                            { tech: 'Next.js, React, Tailwind CSS' },
+                            { tech: 'n8n, Google Gemini API, Chain-of-Thought Prompting' },
+                            { tech: 'Laravel, XAMPP, MySQL' },
+                          ][projectDetailOpen].tech.split(', ').map((tech, i) => (
+                            <span key={i} className="border border-gray-300 px-3 py-1 text-sm rounded-full bg-gray-50">
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                      
+                      <div className="pt-6 border-t border-gray-200">
+                        <a 
+                          href={[
+                            { link: '#' },
+                            { link: '#' },
+                            { link: '#' },
+                            { link: '#' },
+                          ][projectDetailOpen].link} 
+                          className="inline-flex items-center gap-3 border border-black px-6 py-3 hover:bg-black hover:text-white transition-all duration-300"
+                        >
+                          View Live Project <ExternalLink size={16} />
+                        </a>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           </div>
         </section>
