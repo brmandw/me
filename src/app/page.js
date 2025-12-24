@@ -110,7 +110,7 @@ function App() {
         </div>
       )}
 
-      <div className="md:ml-62 md:mr-10 pt-15 md:pt-0">
+      <div className={`md:ml-62 md:mr-10 ${detailOpen ? 'pt-15' : 'pt-5'} md:pt-0`}>
         <section id="about" className="min-h-screen flex items-center px-4 md:px-12 py-10 md:py-12">
           <div className="w-full max-w-6xl">
             <div className={`flex ${detailOpen ? 'flex-col' : 'flex-col-reverse'} md:flex-row gap-3 md:gap-4`}>
