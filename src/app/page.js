@@ -20,7 +20,7 @@ function App() {
   };
 
   return (
-    <main className="min-h-screen bg-white text-black font-sans">
+    <main className="flex justify-center min-h-screen bg-white text-black font-sans">
       <nav className="hidden md:fixed md:z-50 md:top-0 md:left-0 md:h-screen md:w-52 md:flex md:flex-col md:justify-center md:px-20">
         <div className="space-y-12">
             <button
@@ -110,23 +110,23 @@ function App() {
         </div>
       )}
 
-      <div className="md:ml-62 md:mr-10 pt-20 md:pt-0">
+      <div className="md:ml-62 md:mr-10 pt-15 md:pt-0">
         <section id="about" className="min-h-screen flex items-center px-4 md:px-12 py-10 md:py-12">
           <div className="w-full max-w-6xl">
-            <div className="flex flex-col md:flex-row gap-3 md:gap-4">
+            <div className={`flex ${detailOpen ? 'flex-col' : 'flex-col-reverse'} md:flex-row gap-3 md:gap-4`}>
               <div
                 className={`
                   border border-black p-6 md:p-12
-                  transition-all duration-500 ease-in-out
-                  ${detailOpen ? 'md:flex-1' : 'w-full'}
+                  transition-all duration-0 ease-in-out
+                  ${detailOpen ? 'md:flex-1 md:h-100' : ' md:h-95'}
                 `}
               >
                 <h1 className="text-2xl md:text-4xl font-light mb-4 tracking-tight">
-                  Amanda Nur Rahmi.
+                  Hello,
                 </h1>
-                <p className="text-base md:text-lg text-gray-600 mb-6 md:mb-4">Web Developer</p>
-                <p className="text-xs md:text-sm text-gray-700 mb-6 md:mb-12 leading-relaxed max-w-2xl">
-                  Experienced in building web applications.
+                <p className="text-xl md:text-2xl font-light text-black mb-6 md:mb-4">I'm Amanda Nur Rahmi.</p>
+                <p className="text-xs md:text-base text-gray-700 mb-6 md:mb-12 leading-relaxed max-w-2xl">
+                  a junior web developer with hands-on experience in building web applications.
                   Passionate about continuous learning and building impactful digital products.
                 </p>
                 <button
@@ -164,7 +164,7 @@ function App() {
               <div
                 className={`
                   transition-all duration-500 ease-in-out overflow-hidden
-                  ${detailOpen ? 'md:flex-1 opacity-100' : 'md:w-0 opacity-0'}
+                  ${detailOpen ? 'md:flex-1 opacity-100' : ''}
                 `}
               >
                  {detailOpen === 'pendidikan' && (
@@ -292,6 +292,14 @@ function App() {
                           ))}
                         </div>
                       </div>
+                    </div>
+                  </div>
+                )}
+
+                {!detailOpen && (
+                  <div className="flex justify-center items-center border border-black md:h-full">
+                    <div className="px-12">
+                        <img src="/globe.svg" alt="B One Corp." className="w-100 h-40" />
                     </div>
                   </div>
                 )}
@@ -440,32 +448,34 @@ function App() {
                   Based in Bogor, Indonesia
                 </p>
               </div>
-              <div className="flex flex-col gap-6 md:gap-4">
-                <a
-                  href="mailto:amndofc@gmail.com"
-                  className="flex items-center gap-4 border border-black px-4 md:px-5 py-2 hover:bg-black hover:text-white transition-all duration-300"
-                >
-                  <Mail size={18} />
-                  <span className="text-xs md:text-sm font-light">Email</span>
-                </a>
-                <a
-                  href="https://linkedin.com/in/amanda-nur-rahmi"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-4 border border-black px-4 md:px-5 py-2 hover:bg-black hover:text-white transition-all duration-300"
-                >
-                  <Linkedin size={18} />
-                  <span className="text-xs md:text-sm font-light">LinkedIn</span>
-                </a>
-                <a
-                  href="https://github.com/brmandw"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-4 border border-black px-4 md:px-5 py-2 hover:bg-black hover:text-white transition-all duration-300"
-                >
-                  <Github size={18} />
-                  <span className="text-xs md:text-sm font-light">GitHub</span>
-                </a>
+              <div className=''>
+                <div className="flex flex-col gap-6 md:gap-4">
+                  <a
+                    href="mailto:amndofc@gmail.com"
+                    className="flex items-center gap-4 border border-black px-4 md:px-5 py-2 hover:bg-black hover:text-white transition-all duration-300"
+                  >
+                    <Mail size={18} />
+                    <span className="text-xs md:text-sm font-light">Email</span>
+                  </a>
+                  <a
+                    href="https://linkedin.com/in/amanda-nur-rahmi"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4 border border-black px-4 md:px-5 py-2 hover:bg-black hover:text-white transition-all duration-300"
+                  >
+                    <Linkedin size={18} />
+                    <span className="text-xs md:text-sm font-light">LinkedIn</span>
+                  </a>
+                  <a
+                    href="https://github.com/brmandw"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4 border border-black px-4 md:px-5 py-2 hover:bg-black hover:text-white transition-all duration-300"
+                  >
+                    <Github size={18} />
+                    <span className="text-xs md:text-sm font-light">GitHub</span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
