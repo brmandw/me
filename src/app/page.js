@@ -141,7 +141,7 @@ function App() {
                 </button>
                 <button
                   onClick={() => toggleDetail('work')}
-                  className={`text-sm md:text-base border border-black px-3 md:px-4 py-2 md:py-2 hover:bg-black hover:text-white transition-all duration-300 mr-4 
+                  className={`text-sm md:text-base border border-black px-3 md:px-4 py-2 md:py-2 hover:bg-black hover:text-white transition-all duration-300 mr-4 md:mt-0 mt-2
                   ${
                       detailOpen === 'work' ? 'bg-black text-white' : ''
                     }
@@ -151,7 +151,7 @@ function App() {
                 </button>
                 <button
                   onClick={() => toggleDetail('skills')}
-                  className={`text-sm md:text-base border border-black px-3 md:px-4 py-2 md:py-2 hover:bg-black hover:text-white transition-all duration-300 mr-4 
+                  className={`text-sm md:text-base border border-black px-3 md:px-4 py-2 md:py-2 hover:bg-black hover:text-white transition-all duration-300 mr-4 md:mt-0 mt-2 
                   ${
                       detailOpen === 'skills' ? 'bg-black text-white' : ''
                     }
