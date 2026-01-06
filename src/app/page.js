@@ -117,7 +117,7 @@ function App() {
       )}
 
       <div className={`md:ml-62 md:mr-10 ${detailOpen ? 'pt-15' : 'pt-10'} md:pt-0`}>
-        <section id="about" className="min-h-screen flex items-center px-4 md:px-12 py-10 md:py-12">
+        <section id="about" className="min-h-screen flex items-center px-4 md:px-12 py-10 md:py-12 snap-start">
           <div className="w-full max-w-6xl">
             <div className={`flex ${detailOpen ? 'flex-col' : 'flex-col-reverse'} md:flex-row gap-3 md:gap-4`}>
               <div
@@ -314,7 +314,7 @@ function App() {
           </div>
         </section>
 
-        <section id="projects" className="min-h-screen flex items-center px-4 md:px-12 py-10 bg-gray-50">
+        <section id="projects" className="min-h-screen flex items-center px-4 md:px-12 py-10 bg-gray-50 snap-start">
           <div className="w-full max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-light mb-8 md:mb-10 tracking-tight">Projects</h2>
             
@@ -324,8 +324,8 @@ function App() {
                 {[
                   {
                     title: 'ManagHer',
-                    image: '/globe.svg',
-                    description: 'SaaS web app that help..',
+                    image: '/managher.png',
+                    description: 'SaaS platform designed to empower women entrepreneurs.',
                     tech: 'Next.js, React, Express.js, Node.js, MongoDB, Google AI..',
                     link: '#',
                     longDescription: 'ManagHer is a comprehensive SaaS platform designed to empower women entrepreneurs. It leverages AI to generate business ideas based on user interests and market trends. The platform also includes tools for business planning, task management, and resource allocation.'
@@ -413,7 +413,7 @@ function App() {
                         {[
                           {
                             title: 'ManagHer',
-                            image: '/globe.svg',
+                            image: '/managher.png',
                             description: 'SaaS web app that help generate and manage business ideas',
                             tech: 'Next.js, React, Express.js, Node.js, MongoDB, Google AI SDK, Tailwind CSS, TweakCN, Zod, React Hook Form, JWT',
                             link: '#',
@@ -448,7 +448,7 @@ function App() {
                     </div>
                     <img src={[
                           {
-                            image: '/globe.svg',
+                            image: '/managher.png',
                           },
                           {
                             image: '/cart.svg',
@@ -615,7 +615,7 @@ function App() {
           </div>
         </section> */}
 
-        <section id="contact" className="min-h-screen flex items-center px-4 md:px-12 py-10 bg-gray-50">
+        <section id="contact" className="min-h-screen flex items-center px-4 md:px-12 py-10 bg-gray-50 snap-start">
           <div className="flex flex-col items-center justify-center w-full max-w-5xl">
             <h2 className="text-2xl md:text-3xl font-light mb-8 md:mb-10 tracking-tight">Get in touch</h2>
             <div className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-10 md:w-150">
