@@ -275,7 +275,7 @@ function App() {
                       <div>
                         <h3 className="text-sm font-medium mb-3">AI & Automation</h3>
                         <div className="flex flex-wrap gap-2">
-                          {['Google Gemini API', 'Chain-of-Thought Prompting', 'Role-based Prompting', 'n8n Automation'].map((skill) => (
+                          {['Google Gemini API', 'n8n Automation'].map((skill) => (
                             <span
                               key={skill}
                               className="border border-gray-300 px-3 py-1 text-sm rounded-full bg-gray-50"
@@ -327,20 +327,22 @@ function App() {
                     image: '/managher.png',
                     description: 'SaaS platform designed to empower women entrepreneurs.',
                     tech: 'Next.js, React, Express.js, Node.js, MongoDB, Google AI..',
-                    link: '#',
+                    link: 'https://managher-v2.vercel.app/',
                     longDescription: 'ManagHer is a comprehensive SaaS platform designed to empower women entrepreneurs. It leverages AI to generate business ideas based on user interests and market trends. The platform also includes tools for business planning, task management, and resource allocation.'
                   },
                   {
                     title: 'OwlShop',
+                    image: '/owlshop.png',
                     description: 'Cart app',
                     tech: 'Next.js, React, Tailwind CSS',
-                    link: '#',
+                    link: 'https://owlshop-mu.vercel.app/',
                     longDescription: 'OwlShop is a modern e-commerce cart application built with performance and user experience in mind. It features a clean UI, seamless checkout process, and real-time inventory updates.'
                   },
                   {
                     title: 'SMK Negeri 1 ChatBot',
+                    image: '/chatbot.png',
                     description: 'Telegram chatbot that helps students with their questions',
-                    tech: 'n8n, Google Gemini API, Chain-of-Thought Prompting',
+                    tech: 'n8n, Google Gemini API',
                     link: '#',
                     longDescription: 'An intelligent chatbot designed for SMK Negeri 1 Gunungputri students. Powered by Google Gemini API and n8n, it can answer questions about school schedules, curriculum, and administrative procedures with high accuracy.'
                   },
@@ -363,8 +365,8 @@ function App() {
                       <h3 className={`text-base md:text-lg font-light mb-3 ${projectDetailOpen === index ? '' : 'group-hover:underline'}`}>
                         {project.title}
                       </h3>
-                      <p className={`text-xs md:text-sm mb-4 ${projectDetailOpen === index ? '' : ''}`}>{project.description}</p>
-                      <p className={`text-xs md:text-xs ${projectDetailOpen === index ? 'text-gray-400' : 'text-gray-500'}`}>{project.tech}</p>
+                      <p className={`text-xs md:text-sm mb-4 ${projectDetailOpen === index ? 'hidden' : ''}`}>{project.description}</p>
+                      <p className={`text-xs md:text-xs ${projectDetailOpen === index ? 'text-gray-400 hidden' : 'text-gray-500'}`}>{project.tech}</p>
                     </div>
 
                     {/* Mobile Detail View (Expandable) */}
@@ -378,7 +380,7 @@ function App() {
                           className="md:hidden border-l border-r border-b border-black overflow-hidden"
                         >
                           <div className="p-6 bg-gray-50">
-                             <img src={project.image} alt={project.title} className="w-12 h-12 mb-4" />
+                             <img src={project.image} alt={project.title} className=" mb-4" />
                              <h4 className="text-lg font-medium mb-3">{project.title}</h4>
                              <p className="text-sm text-gray-700 mb-4 leading-relaxed">
                                {project.longDescription}
@@ -416,20 +418,20 @@ function App() {
                             image: '/managher.png',
                             description: 'SaaS web app that help generate and manage business ideas',
                             tech: 'Next.js, React, Express.js, Node.js, MongoDB, Google AI SDK, Tailwind CSS, TweakCN, Zod, React Hook Form, JWT',
-                            link: '#',
+                            link: 'https://managher-v2.vercel.app/',
                             longDescription: 'ManagHer is a comprehensive SaaS platform designed to empower women entrepreneurs. It leverages AI to generate business ideas based on user interests and market trends. The platform also includes tools for business planning, task management, and resource allocation.'
                           },
                           {
                             title: 'OwlShop',
                             description: 'Cart app',
                             tech: 'Next.js, React, Tailwind CSS',
-                            link: '#',
+                            link: 'https://owlshop-mu.vercel.app/',
                             longDescription: 'OwlShop is a modern e-commerce cart application built with performance and user experience in mind. It features a clean UI, seamless checkout process, and real-time inventory updates.'
                           },
                           {
                             title: 'SMK Negeri 1 ChatBot',
                             description: 'Telegram chatbot that helps students with their questions',
-                            tech: 'n8n, Google Gemini API, Chain-of-Thought Prompting',
+                            tech: 'n8n, Google Gemini API',
                             link: '#',
                             longDescription: 'An intelligent chatbot designed for SMK Negeri 1 Gunungputri students. Powered by Google Gemini API and n8n, it can answer questions about school schedules, curriculum, and administrative procedures with high accuracy.'
                           },
@@ -451,10 +453,10 @@ function App() {
                             image: '/managher.png',
                           },
                           {
-                            image: '/cart.svg',
+                            image: '/owlshop.png',
                           },
                           {
-                            image: '/chat.svg',
+                            image: '/chatbot.png',
                           },
                           {
                             image: '/library.svg',
@@ -472,7 +474,7 @@ function App() {
                           {
                             title: 'Library',
                           },
-                        ][projectDetailOpen].title} className="w-100 h-40 mb-4" />
+                        ][projectDetailOpen].title} className="w-100 h-full mb-4" />
                     <p className="text-base text-gray-700 mb-8 leading-relaxed">
                        {[
                           {
@@ -497,7 +499,7 @@ function App() {
                           {[
                             { tech: 'Next.js, React, Express.js, Node.js, MongoDB, Google AI SDK, Tailwind CSS, TweakCN, Zod, React Hook Form, JWT' },
                             { tech: 'Next.js, React, Tailwind CSS' },
-                            { tech: 'n8n, Google Gemini API, Chain-of-Thought Prompting' },
+                            { tech: 'n8n, Google Gemini API' },
                             { tech: 'Laravel, XAMPP, MySQL' },
                           ][projectDetailOpen].tech.split(', ').map((tech, i) => (
                             <span key={i} className="border border-gray-300 px-3 py-1 text-sm rounded-full bg-gray-50">
@@ -510,8 +512,8 @@ function App() {
                       <div className="pt-6 border-t border-gray-200">
                         <a 
                           href={[
-                            { link: '#' },
-                            { link: '#' },
+                            { link: 'https://managher-v2.vercel.app/' },
+                            { link: 'https://owlshop-mu.vercel.app/' },
                             { link: '#' },
                             { link: '#' },
                           ][projectDetailOpen].link} 
