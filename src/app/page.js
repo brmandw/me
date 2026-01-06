@@ -116,13 +116,13 @@ function App() {
         </div>
       )}
 
-      <div className={`md:ml-62 md:mr-10 ${detailOpen ? 'pt-15' : 'pt-5'} md:pt-0`}>
+      <div className={`md:ml-62 md:mr-10 ${detailOpen ? 'pt-15' : 'pt-10'} md:pt-0`}>
         <section id="about" className="min-h-screen flex items-center px-4 md:px-12 py-10 md:py-12">
           <div className="w-full max-w-6xl">
             <div className={`flex ${detailOpen ? 'flex-col' : 'flex-col-reverse'} md:flex-row gap-3 md:gap-4`}>
               <div
                 className={`
-                  border border-black p-6 md:p-12
+                  p-6 md:p-12
                   transition-all duration-0 ease-in-out
                   ${detailOpen ? 'md:flex-1 md:h-100' : ' md:h-95'}
                 `}
@@ -303,9 +303,9 @@ function App() {
                 )}
 
                 {!detailOpen && (
-                  <div className="flex justify-center items-center border border-black md:h-full">
+                  <div className="flex justify-center items-center md:h-95">
                     <div className="px-12">
-                        <img src="/globe.svg" alt="B One Corp." className="w-100 h-40" />
+                        <img src="/Amanda.png" alt="Foto Amanda Nur Rahmi" className="w-100 h-full" />
                     </div>
                   </div>
                 )}
