@@ -417,7 +417,7 @@ function App() {
                             title: 'ManagHer',
                             image: '/managher.png',
                             description: 'SaaS web app that help generate and manage business ideas',
-                            tech: 'Next.js, React, Express.js, Node.js, MongoDB, Google AI SDK, Tailwind CSS, TweakCN, Zod, React Hook Form, JWT',
+                            tech: 'Next.js, React, Express.js, Node.js, MongoDB, Google AI SDK, Tailwind CSS, JWT',
                             link: 'https://managher-v2.vercel.app/',
                             longDescription: 'ManagHer is a comprehensive SaaS platform designed to empower women entrepreneurs. It leverages AI to generate business ideas based on user interests and market trends. The platform also includes tools for business planning, task management, and resource allocation.'
                           },
@@ -497,7 +497,7 @@ function App() {
                         <h4 className="text-xs font-bold uppercase tracking-wider text-gray-500 mb-3">Technologies</h4>
                         <div className="flex flex-wrap gap-2">
                           {[
-                            { tech: 'Next.js, React, Express.js, Node.js, MongoDB, Google AI SDK, Tailwind CSS, TweakCN, Zod, React Hook Form, JWT' },
+                            { tech: 'Next.js, React, Express.js, Node.js, MongoDB, Google AI SDK, Tailwind CSS, JWT' },
                             { tech: 'Next.js, React, Tailwind CSS' },
                             { tech: 'n8n, Google Gemini API' },
                             { tech: 'Laravel, XAMPP, MySQL' },
